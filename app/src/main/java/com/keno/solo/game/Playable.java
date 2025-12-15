@@ -29,4 +29,9 @@ public class Playable extends Game
         );
     }
 
+    public void launch()
+    {
+
+    }
+
 }

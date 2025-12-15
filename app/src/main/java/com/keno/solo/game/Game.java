@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public abstract class Game 
 {
-    protected String name, rating, type, description;
-    protected ArrayList<String> genres;
-    protected int price;
+    private String name, rating, type, description;
+    private ArrayList<String> genres;
+    private int price;
 
-    public Game
+    protected Game
     (
         String name, 
         String rating,
@@ -26,4 +26,35 @@ public abstract class Game
         this.price = price;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getRating()
+    {
+        return rating;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public ArrayList<String> getGenres()
+    {
+        return genres;
+    }
+
+    public int getPrice()
+    {
+        return price;
+    }
+
+    public abstract void launch();
 }
