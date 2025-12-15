@@ -56,5 +56,5 @@ public abstract class Game
         return price;
     }
 
-    public abstract void launch();
+    public abstract void play();
 }

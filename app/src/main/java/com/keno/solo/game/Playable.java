@@ -29,6 +29,6 @@ public abstract class Playable extends Game
         );
     }
     
-    public abstract void launch();
+    public abstract void play();
 
 }
