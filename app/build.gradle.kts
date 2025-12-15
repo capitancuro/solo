@@ -44,7 +44,7 @@ javafx {
 
 application {
     // Define the main class for the application.
-    mainClass = "com.keno.App"
+    mainClass = "com.keno.solo.App"
 }
 
 tasks.named<Test>("test") {

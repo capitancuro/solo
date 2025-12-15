@@ -4,7 +4,8 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
-import com.keno.App;
+
+import com.keno.solo.App;
 
 import static org.junit.jupiter.api.Assertions.*;
 
