@@ -8,7 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-    
+
     id("org.openjfx.javafxplugin") version "0.0.14" //OpenJFX Grade Plugin (Latest)
 }
 
@@ -32,6 +32,14 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
+}
+
+javafx {
+    //JavaFX version
+    version = "21"
+
+    //JavaFX modules
+    modules("javafx.controls", "javafx.fxml")
 }
 
 application {
