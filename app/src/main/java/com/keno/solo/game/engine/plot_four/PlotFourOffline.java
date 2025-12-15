@@ -1,4 +1,4 @@
-package com.keno.solo.game.engine;
+package com.keno.solo.game.engine.plot_four;
 
 public class PlotFourOffline extends PlotFour
 {
