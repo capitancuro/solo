@@ -1,8 +1,8 @@
 package com.keno.solo.game;
 
-import com.keno.solo.game.Game;
-
 import java.util.ArrayList;
+
+import com.keno.solo.game.Game;
 
 public abstract class Playable extends Game
 {
