@@ -4,7 +4,7 @@ import com.keno.solo.game.Game;
 
 import java.util.ArrayList;
 
-public class Playable extends Game
+public abstract class Playable extends Game
 {
 
     public Playable
@@ -28,10 +28,7 @@ public class Playable extends Game
 
         );
     }
-
-    public void launch()
-    {
-
-    }
+    
+    public abstract void launch();
 
 }
