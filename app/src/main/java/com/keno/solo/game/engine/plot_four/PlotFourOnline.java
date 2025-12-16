@@ -1,6 +1,6 @@
 package com.keno.solo.game.engine.plot_four;
 
-public class PlotFourOnline extends PlotFour
+public class PlotFourOnline
 {
     
 }
