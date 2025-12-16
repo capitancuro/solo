@@ -1,6 +1,9 @@
 package com.keno.solo.game.engine.plot_four;
 
 import java.util.List;
+import java.util.ArrayList;
+
+import com.keno.solo.game.engine.boardgame.Position;
 
 public class PlotFourOffline extends PlotFour
 {
@@ -20,9 +23,18 @@ public class PlotFourOffline extends PlotFour
     }
 
     public  void setBoard(int x, int y)
-
     {
+        board = new ArrayList<ArrayList<Position>>();
 
+        for(int row = 0; row < ROWS; row++)
+        {
+            board.add(new ArrayList<Position>());
+
+            for(int col = 0; col < COLS; col++)
+            {
+                board.get(row).add(new Position(row, col, null));
+            }
+        }
     }
 
     public void play()
