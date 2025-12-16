@@ -4,7 +4,7 @@ import com.keno.solo.game.engine.boardgame.Unit;
 
 public class Position 
 {
-    private int x, y;
+    private int row, col;
     private Unit unit;
 
     public Position(int x, int y, Unit unit)
@@ -17,14 +17,14 @@ public class Position
         this.unit = unit;
     }
 
-    public int getX()
+    public int getRow()
     {
-        return x;
+        return row;
     }
 
-    public int getY()
+    public int getCol()
     {
-        return y;
+        return col;
     }
 
     public Unit getUnit()
