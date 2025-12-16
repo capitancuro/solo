@@ -34,5 +34,5 @@ public abstract class Boardgame extends Playable
     }
 
     protected abstract void setUnits();
-    protected abstract void setBoard(int x, int y);
+    protected abstract void setBoard();
 }

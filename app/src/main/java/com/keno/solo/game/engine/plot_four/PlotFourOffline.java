@@ -26,7 +26,7 @@ public class PlotFourOffline extends PlotFour
         units.add(new Unit(1, null));
     }
 
-    public  void setBoard(int x, int y)
+    public  void setBoard()
     {
         board = new ArrayList<ArrayList<Position>>();
 
