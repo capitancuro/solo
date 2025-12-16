@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.keno.solo.game.engine.boardgame.Position;
+import com.keno.solo.game.engine.boardgame.Unit;
 
 public class PlotFourOffline extends PlotFour
 {
@@ -15,11 +16,14 @@ public class PlotFourOffline extends PlotFour
             "Play plot four offline! \n Take turns using shared peripherals \n or connect using bluetooth",
             List.of("boardgame", "tabletop", "strategy")
         );
+        setUnits();
     }
 
     public void setUnits()
     {
-
+        units = new ArrayList<Unit>();
+        units.add(new Unit(0, null));
+        units.add(new Unit(1, null));
     }
 
     public  void setBoard(int x, int y)
