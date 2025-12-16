@@ -33,6 +33,11 @@ public abstract class Boardgame extends Playable
         );
     }
 
+    public ArrayList<ArrayList<Position>> getBoard()
+    {
+        return board;
+    }
+
     protected abstract void setUnits();
     protected abstract void setBoard();
 }
