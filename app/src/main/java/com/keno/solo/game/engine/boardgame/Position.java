@@ -7,7 +7,7 @@ public class Position
     private int row, col;
     private Unit unit;
 
-    public Position(int x, int y, Unit unit)
+    public Position(int row, int col, Unit unit)
     {
         setUnit(unit);
     }
