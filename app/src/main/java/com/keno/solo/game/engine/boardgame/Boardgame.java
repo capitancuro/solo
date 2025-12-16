@@ -1,5 +1,6 @@
 package com.keno.solo.game.engine.boardgame;
 
+import java.util.List;
 import java.util.ArrayList;
 
 import com.keno.solo.game.Playable;
@@ -8,8 +9,8 @@ import com.keno.solo.game.engine.boardgame.Unit;
 
 public abstract class Boardgame extends Playable
 {
-    ArrayList<Unit> units;
-    ArrayList<ArrayList<Position>> board;
+    protected ArrayList<Unit> units;
+    protected ArrayList<ArrayList<Position>> board;
 
     public Boardgame
     (
@@ -17,7 +18,7 @@ public abstract class Boardgame extends Playable
         String rating,
         String type,
         String description,
-        ArrayList<String> genres,
+        List<String> genres,
         int price
     )
     {

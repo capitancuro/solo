@@ -1,5 +1,6 @@
 package com.keno.solo.game;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public abstract class Game 
@@ -14,7 +15,7 @@ public abstract class Game
         String rating,
         String type,
         String description,
-        ArrayList<String> genres,
+        List<String> genres,
         int price
     )
     {
@@ -22,7 +23,7 @@ public abstract class Game
         this.rating = rating;
         this.type = type;
         this.description = description;
-        this.genres = genres;
+        this.genres = new ArrayList<String>(genres);
         this.price = price;
     }
 

@@ -1,6 +1,6 @@
 package com.keno.solo.game;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.keno.solo.game.Game;
 
@@ -13,7 +13,7 @@ public abstract class Playable extends Game
         String rating,
         String type,
         String description,
-        ArrayList<String> genres,
+        List<String> genres,
         int price
     )
     {
