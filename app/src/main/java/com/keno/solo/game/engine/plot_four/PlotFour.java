@@ -6,6 +6,8 @@ import com.keno.solo.game.engine.boardgame.Boardgame;
 
 public abstract class PlotFour extends Boardgame
 {
+    protected final int ROWS = 6, COLS = 7;
+    
     protected PlotFour
     (
         String name, 
