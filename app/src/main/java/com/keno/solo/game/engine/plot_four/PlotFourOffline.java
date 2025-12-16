@@ -17,6 +17,7 @@ public class PlotFourOffline extends PlotFour
             List.of("boardgame", "tabletop", "strategy")
         );
         setUnits();
+        setBoard();
     }
 
     public void setUnits()
@@ -38,6 +39,25 @@ public class PlotFourOffline extends PlotFour
             {
                 board.get(row).add(new Position(row, col, null));
             }
+        }
+    }
+
+    public Position move(int col)
+    {
+        int row = 0;
+        while(row < ROWS && board.get(row).get(col).getUnit() == null)
+        {
+            row++;
+        }
+
+        if(row > 0)
+        {
+            board.get(row - 1).get(col).setUnit(units.get(0));
+            return board.get(row - 1).get(col);
+        }
+        else
+        {
+            return null;
         }
     }
 
