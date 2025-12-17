@@ -3,6 +3,7 @@ package com.keno.solo.game.engine.plot_four;
 import java.util.List;
 
 import com.keno.solo.game.engine.boardgame.Boardgame;
+import com.keno.solo.game.engine.boardgame.Position;
 
 public abstract class PlotFour extends Boardgame
 {
@@ -25,4 +26,6 @@ public abstract class PlotFour extends Boardgame
             0
         );
     }
+
+    protected abstract Position move(int col);
 }
