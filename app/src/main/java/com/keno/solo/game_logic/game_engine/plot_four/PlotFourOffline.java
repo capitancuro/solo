@@ -21,6 +21,7 @@ public class PlotFourOffline extends PlotFour
         description,
         genres
     );
+    setBoard();
    }
 
    @Override
@@ -62,60 +63,64 @@ public class PlotFourOffline extends PlotFour
 
        return null;
    }
+   
+   private boolean isWithinBounds(int r, int c) 
+   {
+    return r >= 0 && r < ROWS && c >= 0 && c < COLS;
+   }
 
-   @Override
-   public PlotFourPiece win
-   (
-    BoardPosition<PlotFourPiece> position, 
-    int x, 
-    int y, 
-    int n
-    )
+    /**
+     * Helper: Scans in ONE direction until it hits an edge or a different piece.
+     */
+    private int countDirection(BoardPosition<PlotFourPiece> pos, int dx, int dy) 
     {
-        int row = position.getRow(), col = position.getCol(), count = 0;
+        int count = 0;
+        int r = pos.getRow() + dx;
+        int c = pos.getCol() + dy;
 
-        while ((row >= 0 && col >= 0) && (row < ROWS && col < COLS))
+        while (isWithinBounds(r, c) && board.get(r).get(c).getBoard_Piece() == pos.getBoard_Piece()) 
         {
-            if (board.get(row).get(col).getBoard_Piece() == position.getBoard_Piece())
-            {
-                count++;
-            }
-            else if (row != position.getRow() || col != position.getCol() || count == 4)
-            {
-                break;
-            }
+            count++;
+            r += dx;
+            c += dy;
+        }
+        return count;
+    }
 
-         row += x;
-         col += y;
+    /**
+     * Helper: Combines forward and backward counts for a single vector.
+     */
+    private int countInLine(BoardPosition<PlotFourPiece> pos, int dx, int dy) 
+    {
+        // Start at 1 (the piece just played) + count both ways
+        return 1 + countDirection(pos, dx, dy) + countDirection(pos, -dx, -dy);
+    }
+
+    @Override
+    public PlotFourPiece win(BoardPosition<PlotFourPiece> position, int x, int y, int n) 
+    {
+        // 1. Define the vectors as DATA (Horizontal, Vertical, Diagonal 1, Diagonal 2)
+        // This replaces the recursive 'n' logic.
+        int[][] directions = {
+            {0, 1},  // Horizontal
+            {1, 0},  // Vertical
+            {1, 1},  // Diagonal (Top-Left to Bottom-Right)
+            {1, -1}  // Diagonal (Bottom-Left to Top-Right)
+        };
+
+        // 2. Iterate through the directions
+        for (int[] dir : directions) 
+        {
+            int dx = dir[0];
+            int dy = dir[1];
+
+            // Check if this specific vector has 4 in a row
+            if (countInLine(position, dx, dy) >= 4) {
+                return position.getBoard_Piece();
+            }
         }
 
-        row = position.getRow();
-        col = position.getCol();
-
-        while ((row >= 0 && col >= 0) && (row < ROWS && col < COLS))
-        {
-            if (board.get(row).get(col).getBoard_Piece() == position.getBoard_Piece() && (row != position.getRow() || col != position.getCol()))
-            {
-                count++;
-            }
-            else if (row != position.getRow() || col != position.getCol() || count == 4)
-            {
-                break;
-            }
-
-            row += x * -1;
-            col += y * -1;
-        }
-
-        if (count == 4) return position.getBoard_Piece();
-
-        if (n < 4)
-        {
-            if (x + y == -1) return win(position, x, 1, n + 1);
-            else if (x + y == 0) return win(position, 0, y, n + 1);
-            else return win(position, 1, y, n + 1);
-        }
-        
+        // If the loop finishes with no return, there is no winner
         return null;
     }
 }
