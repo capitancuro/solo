@@ -32,4 +32,8 @@ public abstract class Boardgame<Piece>  extends Game
     }
 
     protected abstract void setBoard();
+    public ArrayList<ArrayList<BoardPosition<Piece>>> getBoard()
+    {
+        return board;
+    }
 }
