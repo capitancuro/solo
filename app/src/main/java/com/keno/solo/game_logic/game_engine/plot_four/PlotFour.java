@@ -4,8 +4,7 @@ import java.util.List;
 
 import com.keno.solo.game_logic.game_engine.boardgame.BoardPosition;
 import com.keno.solo.game_logic.game_engine.boardgame.Boardgame;
-
-enum PlotFourPiece{RED, YELLOW};
+import com.keno.solo.game_logic.game_engine.plot_four.PlotFourPiece;
 
 public abstract class PlotFour extends Boardgame<PlotFourPiece>
 {
