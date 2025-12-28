@@ -1,11 +1,11 @@
-package com.keno.solo.game_logic.game_engine.plot_four;
+package com.keno.solo.game_logic.boardgame.plot_four;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.keno.solo.game_logic.game_engine.boardgame.BoardPosition;
-import com.keno.solo.game_logic.game_engine.boardgame.Boardgame;
-import com.keno.solo.game_logic.game_engine.plot_four.PlotFourPiece;
+import com.keno.solo.game_logic.boardgame.BoardPosition;
+import com.keno.solo.game_logic.boardgame.Boardgame;
+import com.keno.solo.game_logic.boardgame.plot_four.PlotFourPiece;
 
 public abstract class PlotFour extends Boardgame<PlotFourPiece>
 {

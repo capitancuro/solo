@@ -1,4 +1,4 @@
-package com.keno.solo.game_logic.game_engine.boardgame;
+package com.keno.solo.game_logic.boardgame;
 
 public class BoardPosition<Piece>
 {

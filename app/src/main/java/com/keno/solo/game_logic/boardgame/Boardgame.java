@@ -1,10 +1,10 @@
-package com.keno.solo.game_logic.game_engine.boardgame;
+package com.keno.solo.game_logic.boardgame;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.keno.solo.game_logic.Game;
-import com.keno.solo.game_logic.game_engine.boardgame.BoardPosition;
+import com.keno.solo.game_logic.boardgame.BoardPosition;
 
 public abstract class Boardgame<Piece>  extends Game
 {
