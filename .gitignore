@@ -32,10 +32,3 @@ obj/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# === Project Specific ===
-# In case any rogue Gradle/Java files attempt to return
-.gradle/
-.settings/
-.project
-.classpath
