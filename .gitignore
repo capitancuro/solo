@@ -1,0 +1,34 @@
+# === Build Artifacts ===
+# Ignore the entire build directory where CMake generates files
+build/
+bin/
+obj/
+
+# Ignore compiled binaries and libraries
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+
+# === IDE & Editors ===
+# Ignore VS Code specific settings that shouldn't be shared
+.vscode/
+.history/
+*.code-workspace
+
+# If you ever use Vim for quick edits outside VS Code
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+.netrwhist
+*~
+
+# === OS Metadata ===
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
