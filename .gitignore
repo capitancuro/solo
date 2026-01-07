@@ -1,1 +1,57 @@
-/target
+# ==========================
+# 1. Build & Output Directories
+# ==========================
+# Your specific build folder
+build/
+
+# Standard CMake build artifacts (if you build outside 'build/')
+cmake-build-debug/
+cmake-build-release/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CpackConfig.cmake
+CPackSourceConfig.cmake
+
+# ==========================
+# 2. Qt Specific
+# ==========================
+# Qt Creator user settings
+*.user
+*.user.*
+*.qmake.stash
+
+# Qt generated files (usually in build/, but safe to ignore globally)
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qmlc
+*.jsc
+
+# ==========================
+# 3. IDE & System Files
+# ==========================
+# VS Code settings (optional: keep if you want to share launch configurations)
+.vscode/
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# 4. Compiled Binaries
+# ==========================
+# Object files
+*.o
+*.obj
+
+# Dynamic Libraries
+*.so
+*.dylib
+*.dll
+
+# The final executable name (matches your CMake project name)
+solo
+solo.exe
