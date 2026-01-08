@@ -6,7 +6,7 @@ BoardPosition<BoardPiece>::BoardPosition
 (
     int row, 
     int col, 
-    BoardPiece* piece = nullptr
+    BoardPiece piece
 )
 {
     this->row = row;
@@ -30,4 +30,20 @@ template <typename BoardPiece>
 int BoardPosition<BoardPiece>::getCol() const
 {
     return col;
+}
+
+/*
+  █████████  ██████████ ████████████ ████████████ ████████████ ███████████  █████████ 
+ ███░░░░░███░░███░░░░░█░█░░░███░░░░█░█░░░███░░░░█░███░░░░░░░█░█░░░███░░░░█ ███░░░░░███
+░███    ░░░  ░███  █ ░ ░   ░███    ░    ░███    ░ ░███   █   ░ ░  ░███   █ ░███    ░░░ 
+░░█████████  ░██████       ░███         ░███      ░███████        ░██████  ░░█████████ 
+ ░░░░░░░░███ ░███░░█       ░███         ░███      ░███░░░█        ░███░░█   ░░░░░░░░███
+ ███     ███ ░███  ░   █   ░███         ░███      ░███   ░   █    ░███  ░  █ ███     ███
+░░█████████  ██████████   █████        █████      ████████████   █████ ████░░█████████ 
+ ░░░░░░░░░  ░░░░░░░░░░   ░░░░░        ░░░░░      ░░░░░░░░░░░░   ░░░░░ ░░░░  ░░░░░░░░░
+*/
+template <typename BoardPiece>
+void BoardPosition<BoardPiece>::setBoardPiece(BoardPiece board_piece)
+{
+    this->board_piece = board_piece;
 }
