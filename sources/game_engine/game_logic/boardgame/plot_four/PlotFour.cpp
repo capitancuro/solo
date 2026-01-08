@@ -57,6 +57,7 @@ BoardPosition<PlotFourPiece> PlotFour::move(int col)
 
 bool PlotFour::isWithinBounds(int r, int c) const
 {
+    return r >= 0 && r < ROWS && c >= 0 && c < COLS;
 }
 
 int PlotFour::countDirection
@@ -66,5 +67,49 @@ int PlotFour::countDirection
     int dy
 ) const
 {
+    int count = 0, r = pos.getRow() + dx, c = pos.getCol() + dy;
+    while (isWithinBounds(r, c) && board.at(r).at(c).getBoardPiece() == pos.getBoardPiece())
+    {
+        count++;
+        r += dx;
+        c += dy;
+    }
+
+    return count;
 }
 
+int PlotFour::countInLine
+(
+    BoardPosition<PlotFourPiece> pos,
+    int dx, 
+    int dy
+) const
+{
+    return 1 + countDirection(pos, dx, dy) + countDirection(pos, -dx, -dy);
+}
+
+PlotFourPiece PlotFour::win
+(
+    BoardPosition<PlotFourPiece> position,
+    int x,
+    int y
+)
+{
+   int directions[4][2] = {
+    {0, 1},
+    {1, 0},
+    {1, 1},
+    {1, -1}
+   };
+
+   for (auto dir : directions)
+   {
+    int dx = dir[0];
+    int dy = dir[1];
+
+    if (countInLine(position, dx, dy) >=  4)
+        return position.getBoardPiece();
+   }
+
+   return PlotFourPiece::NONE;
+}
