@@ -19,7 +19,6 @@ class Boardgame : Game
     );
 
     protected:
-    virtual void setPieces();
     virtual void setBoard();
 
     public:

@@ -1,5 +1,6 @@
 typedef enum
 {
     RED,
-    YELLOW
+    YELLOW,
+    NONE
 } PlotFourPiece;

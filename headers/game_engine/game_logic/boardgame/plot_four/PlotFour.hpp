@@ -4,6 +4,7 @@
 class PlotFour : Boardgame<PlotFourPiece>
 {
     protected:
+
     const int ROWS = 6, COLS = 7;
     bool red_turn = true;
 
@@ -15,15 +16,30 @@ class PlotFour : Boardgame<PlotFourPiece>
         std::vector<std::string> genres
     );
 
+    protected:
+    
+    virtual void setBoard() override;
+
     public:
 
     virtual BoardPosition<PlotFourPiece> move(int col) final;
 
     protected:
-    
+
     virtual bool isWithinBounds(int r, int c) const final;
-    virtual int countDirection(BoardPosition<PlotFourPiece> pos, int dx, int dy) const final;
-    virtual int countInLine(BoardPosition<PlotFourPiece> pos, int dx, int dy) const final;
+    virtual int countDirection
+    (
+        BoardPosition<PlotFourPiece> pos, 
+        int dx, 
+        int dy
+    ) const final;
+
+    virtual int countInLine
+    (
+        BoardPosition<PlotFourPiece> pos, 
+        int dx, 
+        int dy
+    ) const final;
 
     public:
 
