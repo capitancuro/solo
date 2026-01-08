@@ -1,5 +1,5 @@
 #pragma once
-#include "Boardgame.hpp"
+#include "game_engine/game_logic/boardgame/Boardgame.hpp"
 #include "PlotFourPiece.h"
 
 class PlotFour : public Boardgame<PlotFourPiece>
