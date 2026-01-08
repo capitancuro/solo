@@ -9,12 +9,38 @@ struct BoardPosition
     int row, col;
 
     public:
-    BoardPosition(int row, int col, BoardPiece board_piece);
-    
-    BoardPiece getBoardPiece() const;
-    int getRow() const;
-    int getCol() const;
+
+    BoardPosition
+    (
+        int row, 
+        int col, 
+        BoardPiece piece
+    )
+    {
+        this->row = row;
+        this->col = col;
+        this->board_piece = board_piece;
+    }
+
+    BoardPiece getBoardPiece() const
+    {
+        return board_piece;
+    }
+
+    int getRow() const
+    {
+        return row;
+    }
+
+    int getCol() const
+    {
+        return col;
+    }
 
     private:
-    void setBoardPiece(BoardPiece board_piece);
+
+    void setBoardPiece(BoardPiece board_piece)
+    {
+        this->board_piece = board_piece;
+    }
 };
