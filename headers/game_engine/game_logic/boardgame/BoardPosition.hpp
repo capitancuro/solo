@@ -1,3 +1,4 @@
+#pragma once
 template <typename BoardPiece>
 struct BoardPosition
 {

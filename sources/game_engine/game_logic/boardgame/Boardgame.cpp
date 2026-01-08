@@ -1,5 +1,4 @@
-#pragma once
-#include "Boardgame.hpp"
+#include "game_engine/game_logic/boardgame/Boardgame.hpp"
 
 template <typename BoardPiece>
 Boardgame<BoardPiece>::Boardgame

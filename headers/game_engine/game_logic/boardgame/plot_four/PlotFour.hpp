@@ -1,7 +1,8 @@
+#pragma once
 #include "Boardgame.hpp"
 #include "PlotFourPiece.h"
 
-class PlotFour : Boardgame<PlotFourPiece>
+class PlotFour : public Boardgame<PlotFourPiece>
 {
     protected:
 
@@ -43,10 +44,5 @@ class PlotFour : Boardgame<PlotFourPiece>
 
     public:
 
-    virtual PlotFourPiece win
-    (
-        BoardPosition<PlotFourPiece> position,
-        int x,
-        int y
-    ) final;
+    virtual PlotFourPiece win(BoardPosition<PlotFourPiece> position) final;
 };

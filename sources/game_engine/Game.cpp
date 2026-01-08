@@ -1,5 +1,4 @@
-#pragma once
-#include "Game.hpp"
+#include "game_engine/Game.hpp"
 
 Game::Game
 (

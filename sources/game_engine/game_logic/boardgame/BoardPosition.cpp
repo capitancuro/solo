@@ -1,5 +1,4 @@
-#pragma once
-#include "BoardPosition.hpp"
+#include "game_engine/game_logic/boardgame/BoardPosition.hpp"
 
 template <typename BoardPiece>
 BoardPosition<BoardPiece>::BoardPosition

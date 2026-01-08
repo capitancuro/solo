@@ -1,8 +1,9 @@
-#include "Game.hpp"
+#pragma once
+#include "game_engine/Game.hpp"
 #include "BoardPosition.hpp"
 
 template <typename BoardPiece>
-class Boardgame : Game
+class Boardgame : public Game
 {
     protected:
     std::vector<std::vector<BoardPosition<BoardPiece>>> board;

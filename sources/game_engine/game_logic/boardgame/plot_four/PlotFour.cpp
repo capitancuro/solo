@@ -1,5 +1,4 @@
-#pragma once
-#include "PlotFour.hpp"
+#include "game_engine/game_logic/boardgame/plot_four/PlotFour.hpp"
 
 PlotFour::PlotFour
 (
@@ -88,12 +87,7 @@ int PlotFour::countInLine
     return 1 + countDirection(pos, dx, dy) + countDirection(pos, -dx, -dy);
 }
 
-PlotFourPiece PlotFour::win
-(
-    BoardPosition<PlotFourPiece> position,
-    int x,
-    int y
-)
+PlotFourPiece PlotFour::win(BoardPosition<PlotFourPiece> position)
 {
    int directions[4][2] = {
     {0, 1},
