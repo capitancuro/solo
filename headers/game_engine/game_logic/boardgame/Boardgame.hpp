@@ -19,9 +19,8 @@ class Boardgame : Game
     );
 
     protected:
-    virtual void setPieces();
     virtual void setBoard();
 
     public:
-    std::vector<std::vector<BoardPosition<BoardPiece>>> getBoard() const;
+    virtual std::vector<std::vector<BoardPosition<BoardPiece>>> getBoard() const final;
 };
