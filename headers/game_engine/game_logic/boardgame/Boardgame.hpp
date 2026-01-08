@@ -23,5 +23,5 @@ class Boardgame : Game
     virtual void setBoard();
 
     public:
-    std::vector<std::vector<BoardPosition<BoardPiece>>> getBoard() const;
+    virtual std::vector<std::vector<BoardPosition<BoardPiece>>> getBoard() const final;
 };

@@ -23,7 +23,7 @@ Boardgame<BoardPiece>::Boardgame
 }
 
 template <typename BoardPiece>
-std::vector<std::vector<BoardPosition<BoardPiece>>> Boardgame<BoardPiece>::getBoard() const 
+std::vector<std::vector<BoardPosition<BoardPiece>>> Boardgame<BoardPiece>::getBoard() const
 {
     return board;
 }
