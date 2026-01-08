@@ -29,14 +29,30 @@ void PlotFour::setBoard()
     {
         board.push_back(std::vector<BoardPosition<PlotFourPiece>>());
         for(int col = 0; col < COLS; col++)
-        {
-            board.at(row).push_back(BoardPosition<PlotFourPiece>(row, col, nullptr));
-        }
+            board.at(row).push_back(BoardPosition<PlotFourPiece>(row, col, PlotFourPiece::NONE));
     }
 }
 
 BoardPosition<PlotFourPiece> PlotFour::move(int col)
 {
+    for (int row = ROWS - 1; row >= 0; row--)
+    {
+        if (board.at(row).at(col).getBoardPiece() == PlotFourPiece::NONE)
+        {
+            if (red_turn)
+            {
+                board.at(row).at(col).setBoardPiece(PlotFourPiece::RED);
+                red_turn = !red_turn;
+                return board.at(row).at(col);
+            }
+            else
+            {
+                board.at(row).at(col).setBoardPiece(PlotFourPiece::YELLOW);
+                red_turn = !red_turn;
+                return board.at(row).at(col);
+            }
+        }
+    }
 }
 
 bool PlotFour::isWithinBounds(int r, int c) const
