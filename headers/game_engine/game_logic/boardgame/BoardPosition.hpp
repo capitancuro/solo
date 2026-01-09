@@ -14,7 +14,7 @@ struct BoardPosition
     (
         int row, 
         int col, 
-        BoardPiece piece
+        BoardPiece board_piece
     )
     {
         this->row = row;
