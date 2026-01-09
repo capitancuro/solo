@@ -36,22 +36,24 @@ BoardPosition<PlotFourPiece> PlotFour::move(int col)
 {
     for (int row = ROWS - 1; row >= 0; row--)
     {
-        if (board.at(row).at(col).getBoardPiece() == PlotFourPiece::NONE)
+        if (board.at(row).at(col).board_piece == PlotFourPiece::NONE)
         {
             if (red_turn)
             {
-                board.at(row).at(col).setBoardPiece(PlotFourPiece::RED);
+                board.at(row).at(col).board_piece = PlotFourPiece::RED;
                 red_turn = !red_turn;
                 return board.at(row).at(col);
             }
             else
             {
-                board.at(row).at(col).setBoardPiece(PlotFourPiece::YELLOW);
+                board.at(row).at(col).board_piece = PlotFourPiece::YELLOW;
                 red_turn = !red_turn;
                 return board.at(row).at(col);
             }
         }
     }
+
+    return BoardPosition<PlotFourPiece>(-1, -1, PlotFourPiece::NONE);
 }
 
 bool PlotFour::isWithinBounds(int r, int c) const
@@ -66,8 +68,8 @@ int PlotFour::countDirection
     int dy
 ) const
 {
-    int count = 0, r = pos.getRow() + dx, c = pos.getCol() + dy;
-    while (isWithinBounds(r, c) && board.at(r).at(c).getBoardPiece() == pos.getBoardPiece())
+    int count = 0, r = pos.row + dx, c = pos.col + dy;
+    while (isWithinBounds(r, c) && board.at(r).at(c).board_piece == pos.board_piece)
     {
         count++;
         r += dx;
@@ -89,12 +91,14 @@ int PlotFour::countInLine
 
 PlotFourPiece PlotFour::win(BoardPosition<PlotFourPiece> position)
 {
-   int directions[4][2] = {
-    {0, 1},
-    {1, 0},
-    {1, 1},
-    {1, -1}
-   };
+    if (position.board_piece == PlotFourPiece::NONE) return PlotFourPiece::NONE;
+    
+    int directions[4][2] = {
+        {0, 1},
+        {1, 0},
+        {1, 1},
+        {1, -1}
+    };
 
    for (auto dir : directions)
    {
@@ -102,7 +106,7 @@ PlotFourPiece PlotFour::win(BoardPosition<PlotFourPiece> position)
     int dy = dir[1];
 
     if (countInLine(position, dx, dy) >=  4)
-        return position.getBoardPiece();
+        return position.board_piece;
    }
 
    return PlotFourPiece::NONE;
