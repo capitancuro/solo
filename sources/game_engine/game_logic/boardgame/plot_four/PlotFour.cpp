@@ -7,7 +7,6 @@ PlotFour::PlotFour
     std::vector<std::string> genres
 
 ) : Boardgame
-
 (
     name, 
     "E",
